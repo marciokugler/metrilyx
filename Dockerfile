@@ -2,6 +2,7 @@ FROM ubuntu
 
 RUN apt-get -y update \
  && apt-get install -y curl wget make gfortran libuuid1 uuid-runtime python-setuptools python-dev libpython-dev git-core libffi-dev libatlas-dev libblas-dev python-numpy nginx
+RUN apt-get -y install sudo
 RUN curl -s http://metrilyx.github.io/bootstrap.sh  | bash -s -- install
 RUN pip install git+https://github.com/Ticketmaster/metrilyx-2.0.git
 RUN cp /opt/metrilyx/etc/metrilyx/metrilyx.conf.sample /opt/metrilyx/etc/metrilyx/metrilyx.conf \
